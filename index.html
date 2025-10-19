@@ -42,66 +42,39 @@
 
                 <h1 class="section-title">Zero Data Loss Guarantee</h1>
                 <p class="hero-subtitle">
-                    Every delivery attempt is recorded in tamper-proof Merkle
+                    Kapsel records every delivery attempt in tamper-proof Merkle
                     trees with Ed25519 signatures. Built for mission-critical
                     systems where failure isn't an option.
                 </p>
-                <div class="code-demo">
-                    <div class="prompt line">
-                        $ kapsel-verify --proof delivery.json
+                <div class="interactive-demo">
+                    <div class="demo-title">Anatomy of a Delivery Proof</div>
+                    <div class="demo-subtitle">This is a real, cryptographically-signed record of a delivered webhook. Edit any field to see the signature break in real-time.</div>
+                    <div class="demo-grid">
+                        <span class="demo-label">URL</span>
+                        <input type="text" id="demo-url" class="demo-input" value="https://api.stripe.com/webhook">
+
+                        <span class="demo-label">Time</span>
+                        <input type="text" id="demo-timestamp" class="demo-input" value="2024-01-15T10:30:45Z">
+
+                        <span class="demo-label">Status</span>
+                        <input type="text" id="demo-status" class="demo-input" value="200">
+
+                        <span class="demo-label">Hash</span>
+                        <input type="text" id="demo-hash" class="demo-input" value="3b7e72d4a8f9e1c2...">
+
+                        <span class="demo-label">Signature</span>
+                        <span id="signature-status" class="demo-value signature-hex"></span>
+
+                        <span class="demo-label">Verification</span>
+                        <span id="verification-status" class="demo-value"><span class="verified">✓ Verified</span></span>
                     </div>
-                    <span class="line success"
-                        >✓ Proof verified successfully!</span
-                    >
-                    <br />
-                    <span class="line"
-                        >Webhook delivered to
-                        <span class="value"
-                            >https://api.stripe.com/webhook</span
-                        ></span
-                    >
-                    <span class="line"
-                        >Timestamp:
-                        <span class="value"
-                            >2024-01-15T10:30:45Z</span
-                        ></span
-                    >
-                    <span class="line"
-                        >HTTP status:
-                        <span class="value">200</span></span
-                    >
-                    <span class="line"
-                        >Response time:
-                        <span class="value">142ms</span></span
-                    >
-                    <span class="line"></span>
-                    <span class="line"
-                        >Tree size:
-                        <span class="value">12,345</span>
-                        events</span
-                    >
-                    <span class="line"
-                        >Root hash:
-                        <span class="value"
-                            >3b7e72d4a8f9e1c2...</span
-                        ></span
-                    >
-                    <span class="line"
-                        >Signature:
-                        <span class="success"
-                            >verified with Ed25519</span
-                        ></span
-                    >
-                    <span class="line"></span>
-                    <br />
-                    <span class="line comment"
-                        >Attack the proof, attack the math. Good
-                        luck with that.</span
-                    >
-                </div>
+
+                    <button id="reset-button" class="demo-reset-btn hidden">Reset</button>
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/tweetnacl@1.0.3/nacl.min.js"></script>
+        <script src="js/demo.js"></script>
         <script async src="https://tally.so/widgets/embed.js"></script>
     </body>
     <footer class="footer">
