@@ -1,0 +1,331 @@
+:root {
+    --bg-dark: #181616;
+    --bg-darker: #030708;
+    --text-primary: #e2e2db;
+    --text-secondary: #b0b0b0;
+    --text-dim: #666666;
+    --accent-orange: #f7a531;
+    --accent-blue: #285b92;
+    --accent-pink: #d94c78;
+    --border: #1c2021;
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* 8px spacing scale */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 40px;
+    --space-2xl: 48px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer {
+    text-align: center;
+    margin-top: auto;
+    padding: var(--space-lg) 0 var(--space-md);
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    align-items: center;
+}
+
+.footer a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    font-weight: 1000;
+}
+
+.footer a:hover {
+    color: var(--accent-pink);
+}
+
+.footer-license {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-weight: 1000;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: var(--space-xs);
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.4;
+    min-height: 100vh;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 48px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6vh;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.logo-container {
+    position: relative;
+    margin-bottom: var(--space-lg);
+    display: inline-block;
+    max-width: 100%;
+}
+
+.logo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 40px rgba(255, 133, 0, 0.15));
+}
+
+.alpha-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--accent-orange);
+    color: var(--bg-dark);
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 1000;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.hero-tagline {
+    font-size: 40px;
+    font-weight: 1000;
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    max-width: 510px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    text-align: left;
+    font-weight: 1000;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xl);
+}
+
+.btn-primary {
+    background: var(--accent-orange);
+    color: var(--bg-dark);
+    border: none;
+    padding: 14px 32px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--accent-pink);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 3px solid var(--border);
+    padding: 12px 30px;
+    font-size: 20px;
+    font-weight: 1000;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-blue);
+    color: var(--bg-dark);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 1000;
+    color: var(--accent-orange);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 6.0px;
+    text-align: center;
+}
+
+.code-demo {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    margin: 0;
+    font-family: "JetBrains Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.code-demo .prompt {
+    color: var(--accent-pink);
+    margin-bottom: var(--space-sm);
+    font-weight: 1000;
+}
+
+.code-demo .line {
+    display: block;
+    font-weight: 1000;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    text-align: left;
+}
+
+.code-demo .success {
+    color: var(--accent-pink);
+    font-weight: 1000;
+}
+
+.code-demo .value {
+    color: var(--text-primary);
+}
+
+.code-demo .comment {
+    color: var(--text-dim);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .container {
+        padding: 0 24px;
+        padding-top: 4vh;
+    }
+
+    .hero {
+        margin-bottom: 32px;
+    }
+
+    .logo {
+        max-width: 90vw;
+    }
+
+    .alpha-badge {
+        padding: 6px 12px;
+        font-size: 11px;
+        letter-spacing: 0.8px;
+        right: -4px;
+        top: -4px;
+    }
+
+    .hero-tagline {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 20px;
+        gap: var(--space-sm);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        text-align: center;
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .code-demo {
+        padding: 16px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .footer {
+        margin-top: var(--space-lg);
+        padding: var(--space-md) 0;
+    }
+}
